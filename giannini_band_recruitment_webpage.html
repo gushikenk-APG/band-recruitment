@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A. P. Giannini Middle School Band | Join the Band</title>
+  <style>
+    :root {
+      --navy: #15324b;
+      --gold: #d3a347;
+      --cream: #f8f5ef;
+      --slate: #44525f;
+      --white: #ffffff;
+      --shadow: 0 12px 30px rgba(0,0,0,.08);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1d2730;
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(21,50,75,.95), rgba(21,50,75,.82)),
+                  radial-gradient(circle at top right, rgba(211,163,71,.35), transparent 40%);
+      color: var(--white);
+      padding: 72px 24px 54px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: .03em;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin: 18px 0 16px;
+      max-width: 850px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 760px;
+      margin: 0 0 26px;
+      color: rgba(255,255,255,.94);
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .btn {
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #222;
+    }
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.28);
+      color: var(--white);
+      background: rgba(255,255,255,.08);
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .stat {
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      padding: 18px;
+      backdrop-filter: blur(3px);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+    section {
+      padding: 54px 24px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: var(--navy);
+    }
+    h2 {
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      color: var(--navy);
+      margin: 0 0 12px;
+    }
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 26px;
+      color: var(--slate);
+    }
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .checklist {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+    .checklist ul { margin: 0; padding-left: 20px; }
+    .banner {
+      background: #fff7e7;
+      border-left: 6px solid var(--gold);
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin-top: 18px;
+    }
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 16px;
+    }
+    .step {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 22px 22px 22px 70px;
+      position: relative;
+    }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 22px;
+      top: 20px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+    .faq details {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .footer-cta {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    .footer-cta h2, .footer-cta p { color: var(--white); }
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: var(--slate);
+      font-size: .95rem;
+    }
+    @media (max-width: 820px) {
+      .split { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">A. P. Giannini Middle School • Band Recruitment</span>
+      <h1>Join the Band. Find Your Sound. Belong from Day One.</h1>
+      <p>
+        The A. P. Giannini Band program welcomes beginning musicians and returning players.
+        No experience is required. Students build confidence, teamwork, discipline, and joy while learning to play as part of an ensemble.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#join">Sign Up for Band</a>
+        <a class="btn btn-secondary" href="#why-band">Why Choose Band?</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>No experience needed</strong><span>Beginners are welcome and supported step by step.</span></div>
+        <div class="stat"><strong>Perform with others</strong><span>Concerts, school events, and community performances.</span></div>
+        <div class="stat"><strong>Build real skills</strong><span>Focus, responsibility, listening, and teamwork.</span></div>
+        <div class="stat"><strong>Start in 6th grade</strong><span>The best time to join is at the beginning of middle school.</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="why-band">
+    <div class="wrap">
+      <h2>Why Families Choose Band</h2>
+      <p class="section-intro">
+        Band is more than an elective. It gives students a place to connect, grow, and contribute.
+        Students learn an instrument, work toward performances, and become part of a team.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Confidence</h3>
+          <p>Students experience steady growth as they learn new skills, perform publicly, and see their hard work pay off.</p>
+        </div>
+        <div class="card">
+          <h3>Community</h3>
+          <p>Band gives students an instant peer group and helps them feel connected to school from the start.</p>
+        </div>
+        <div class="card">
+          <h3>Discipline</h3>
+          <p>Regular practice builds responsibility, focus, and the ability to work toward long-term goals.</p>
+        </div>
+        <div class="card">
+          <h3>Joy</h3>
+          <p>Making music together is fun. Students often say band becomes the part of the school day they look forward to most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>Who Can Join?</h2>
+        <p class="section-intro">
+          Every incoming student is invited. Band is designed for beginners as well as students who have already started learning an instrument.
+        </p>
+        <div class="banner">
+          <strong>Good to know:</strong> Students do not need prior lessons, private instruction, or previous band experience to participate.
+        </div>
+      </div>
+      <div class="checklist">
+        <h3>Instruments may include:</h3>
+        <ul>
+          <li>Flute</li>
+          <li>Clarinet</li>
+          <li>Alto saxophone</li>
+          <li>Trumpet</li>
+          <li>Trombone</li>
+          <li>Percussion</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What Students Experience</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Beginning Band</h3>
+          <p>Students learn instrument basics, posture, tone production, note reading, rhythm, and ensemble habits.</p>
+        </div>
+        <div class="card">
+          <h3>Performances</h3>
+          <p>Students work toward concerts and school events that give them goals, pride, and memorable experiences.</p>
+        </div>
+        <div class="card">
+          <h3>Teamwork</h3>
+          <p>Band teaches students how individual effort supports a group result. Every part matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <h2>How to Join Band</h2>
+      <p class="section-intro">Make the process simple and visible. Replace the placeholders below with your live school links and contact details.</p>
+      <div class="steps">
+        <div class="step"><strong>Select Band as your elective.</strong><br>Update this sentence with the exact registration or elective-selection process used by your school.</div>
+        <div class="step"><strong>Complete the interest form.</strong><br>Add a Google Form, Microsoft Form, or other sign-up form link here.</div>
+        <div class="step"><strong>Watch for next steps.</strong><br>Families receive instrument information, important dates, and orientation details before school begins.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap faq">
+      <h2>Frequently Asked Questions</h2>
+      <details open>
+        <summary>Does my child need experience?</summary>
+        <p>No. Beginners are encouraged to join. The program is built to teach students from the ground up.</p>
+      </details>
+      <details>
+        <summary>What if my child is not sure which instrument to choose?</summary>
+        <p>That is normal. Families can request guidance, and students can be matched to an instrument that fits their needs and the ensemble.</p>
+      </details>
+      <details>
+        <summary>Why start in 6th grade?</summary>
+        <p>Students benefit most when they start at the beginning of middle school and grow with the program over time.</p>
+      </details>
+      <details>
+        <summary>Who can I contact?</summary>
+        <p>Replace this text with the band director's name, school email address, and any orientation dates or office hours.</p>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap footer-cta">
+      <h2>Ready to Get Started?</h2>
+      <p>
+        Join a program where students learn, perform, and belong. Add your school’s registration link,
+        contact details, and a short welcome video to make this page fully live.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#join">Join the Band</a>
+        <a class="btn btn-secondary" href="mailto:band@school.edu">Contact the Band Director</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Sample recruitment webpage for A. P. Giannini Middle School Band. Replace placeholder links, contact info, and instrument details before publishing.
+  </footer>
+</body>
+</html>
